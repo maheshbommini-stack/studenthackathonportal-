@@ -1,0 +1,767 @@
+/* =========================================
+   HACKARENA - MAIN STYLE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080c14;
+    color: #f1f5f9;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    height: 72px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #080c14;
+    border-bottom: 1px solid #202838;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    text-decoration: none;
+    color: #f1f5f9;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: #aab4c5;
+
+    padding: 9px 13px;
+    border-radius: 7px;
+
+    transition: 0.2s ease;
+}
+
+.navlinks a:hover,
+.navlinks a.active {
+    color: #ffffff;
+    background: #151b27;
+}
+
+.navlinks .nav-btn {
+    background: #f1f5f9;
+    color: #080c14;
+    font-weight: 600;
+}
+
+.navlinks .nav-btn:hover {
+    background: #dce4ed;
+}
+
+.menu {
+    display: none;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+main {
+    width: 100%;
+}
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+
+    min-height: 650px;
+    padding: 90px 0;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    color: #8492a8;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 4.4rem;
+    line-height: 1.02;
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #4da3ff;
+}
+
+.hero p {
+    max-width: 620px;
+
+    color: #9ba7b9;
+    font-size: 1.08rem;
+
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   HERO ACTIONS
+========================================= */
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 19px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.primary {
+    background: #f1f5f9;
+    color: #080c14;
+}
+
+.btn.primary:hover {
+    background: #dce5ed;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: #f1f5f9;
+
+    border: 1px solid #354052;
+}
+
+.btn.secondary:hover {
+    background: #151b27;
+    border-color: #4b586c;
+}
+
+/* =========================================
+   HERO CARD
+========================================= */
+
+.hero-card {
+    background: #101722;
+
+    border: 1px solid #293446;
+    border-radius: 20px;
+
+    padding: 38px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+.orbit {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #182131;
+    border: 1px solid #2e3a4e;
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 22px;
+}
+
+.hero-card h2 {
+    font-size: 2rem;
+    margin-bottom: 7px;
+}
+
+.hero-card p {
+    color: #9ca8ba;
+    margin-bottom: 28px;
+}
+
+.count {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    padding-top: 20px;
+    border-top: 1px solid #293446;
+}
+
+.count div {
+    display: flex;
+    flex-direction: column;
+}
+
+.count b {
+    font-size: 1.35rem;
+    margin-bottom: 2px;
+}
+
+.count span {
+    color: #7f8b9d;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats {
+    width: 88%;
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #202838;
+    border-bottom: 1px solid #202838;
+}
+
+.stats > div {
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid #202838;
+}
+
+.stats > div:last-child {
+    border-right: none;
+}
+
+.stats b {
+    font-size: 1.7rem;
+    margin-bottom: 3px;
+}
+
+.stats span {
+    color: #7f8b9d;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 90px 0 30px;
+}
+
+.section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.section-head h2 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+}
+
+.section-head > a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.section-head > a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   HACKATHON GRID
+========================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* =========================================
+   HACKATHON CARDS
+========================================= */
+
+.hackathon-card {
+    background: #101722;
+
+    border: 1px solid #293446;
+    border-radius: 14px;
+
+    padding: 24px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hackathon-card:hover {
+    transform: translateY(-4px);
+    border-color: #43516a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.hackathon-icon {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+}
+
+.hackathon-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.hackathon-info p {
+    color: #9ca8ba;
+    font-size: 0.92rem;
+    margin-bottom: 7px;
+}
+
+.hackathon-card .btn {
+    margin-top: 15px;
+}
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.how {
+    padding-top: 90px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.step {
+    background: #101722;
+
+    border: 1px solid #293446;
+    border-radius: 14px;
+
+    padding: 25px;
+}
+
+.step i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background: #182131;
+    border: 1px solid #2e3a4e;
+    border-radius: 9px;
+
+    color: #60a5fa;
+
+    font-style: normal;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #8f9bad;
+    font-size: 0.92rem;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    width: 88%;
+    max-width: 850px;
+    margin: auto;
+
+    padding: 110px 20px;
+
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #929daf;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    margin-top: 30px;
+
+    padding: 32px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid #202838;
+
+    color: #758196;
+    font-size: 0.9rem;
+}
+
+footer b {
+    color: #f1f5f9;
+    font-size: 1rem;
+}
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.page-title {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 65px 0 35px;
+}
+
+.page-title h1 {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: #9ca8ba;
+}
+
+.page-title .eyebrow {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.filters {
+    width: 88%;
+    max-width: 1150px;
+    margin: 0 auto 30px;
+
+    display: flex;
+    gap: 12px;
+}
+
+.filters input,
+.filters select {
+    flex: 1;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #dbe3ec;
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background: #0c111b;
+    color: #f1f5f9;
+
+    border: 1px solid #303b4e;
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #5b6b82;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* =========================================
+   PANEL
+========================================= */
+
+.panel {
+    background: #101722;
+    border: 1px solid #293446;
+    border-radius: 14px;
+
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details-card {
+    width: 88%;
+    max-width: 1150px;
+    margin: 0 auto 30px;
+
+    background: #101722;
+    border: 1px solid #293446;
+    border-radius: 16px;
+
+    padding: 35px;
+}
+
+.details-card h2 {
+    margin-bottom: 12px;
+}
+
+.details-card p {
+    color: #9ca8ba;
+    margin-bottom: 14px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.detail-item {
+    background: #0c111b;
+    border: 1px solid #293446;
+    border-radius: 10px;
+
+    padding: 16px;
+}
+
+.detail-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.detail-item span {
+    color: #929daf;
+}
+
+/* =========================================
+   AUTH PAGES
+========================================= */
+
+.auth-container {
+    width: 88%;
+    max-width: 1150px;
+    min-height: 650px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: #101722;
+    border: 1px solid #293446;
+    border-radius: 16px;
+
+    padding: 35px;
+}
+
+.auth-card h1 {
+    margin-bottom: 7px;
+}
+
+.auth-card > p {
+    color: #8f9bad;
+    margin-bottom: 25px;
+}
+
+.auth-card .btn,
+.auth-card button {
+    width: 100%;
+    text-align: center;
+}
+
+/* =========================================
+   TEAM
+========================================= */
+
+.team-member {
+    background: #0c111b;
+    border: 1px solid #293446;
+    border-radius: 10px;
+
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+.team-member strong {
+    display: block;
+}
+
+.team-member span {
+    color: #8f9bad;
+}
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
+.leaderboard {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+
+    background: #101722;
+    border: 1px solid #293446;
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.leaderboard-header,
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 150px 100px;
+
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 20px;
+}
+
+.leaderboard-header {
+    background: #151b27;
+    color: #8f9bad;
+    font-weight: 700;
+}
+
+.leaderboard-row {
+    border-top: 1px solid #252e3e;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+    padding: 45px 20px;
+    text-align: center;
+    color: #8f9bad;
+}

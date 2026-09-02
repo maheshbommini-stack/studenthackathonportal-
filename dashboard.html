@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | HackArena</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="index.html" class="brand">
+        ⚡ HackArena
+    </a>
+
+    <div class="navlinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="hackathons.html">
+            Hackathons
+        </a>
+
+        <a href="dashboard.html" class="active">
+            Dashboard
+        </a>
+
+        <a href="leaderboard.html">
+            Leaderboard
+        </a>
+
+        <a
+            href="#"
+            onclick="logoutUser()"
+            class="nav-btn"
+        >
+            Logout
+        </a>
+
+    </div>
+
+    <button
+        class="menu"
+        onclick="toggleMenu()"
+    >
+        ☰
+    </button>
+
+</nav>
+
+
+<main class="dashboard-container">
+
+
+    <!-- WELCOME -->
+
+    <section class="dashboard-welcome">
+
+        <div>
+
+            <span class="eyebrow">
+                STUDENT DASHBOARD
+            </span>
+
+            <h1>
+
+                Welcome,
+
+                <span id="userName">
+                    Student
+                </span>
+
+                👋
+
+            </h1>
+
+            <p>
+                Track your hackathons,
+                teams and project submissions.
+            </p>
+
+        </div>
+
+
+        <a
+            href="hackathons.html"
+            class="btn primary"
+        >
+            Find Hackathon →
+        </a>
+
+    </section>
+
+
+
+    <!-- STATS -->
+
+    <section class="dashboard-stats">
+
+
+        <div class="dash-stat">
+
+            <span>🏆</span>
+
+            <div>
+
+                <b id="registeredCount">
+                    0
+                </b>
+
+                <small>
+                    Registered
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dash-stat">
+
+            <span>👥</span>
+
+            <div>
+
+                <b>1</b>
+
+                <small>
+                    Team
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dash-stat">
+
+            <span>📤</span>
+
+            <div>
+
+                <b>0</b>
+
+                <small>
+                    Submissions
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dash-stat">
+
+            <span>⭐</span>
+
+            <div>
+
+                <b>0</b>
+
+                <small>
+                    Points
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DASHBOARD GRID -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- REGISTERED HACKATHON -->
+
+        <div class="panel dashboard-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR EVENT
+                    </span>
+
+                    <h2>
+                        Registered Hackathon
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="registeredHackathon"
+                class="event-box"
+            >
+
+                <div class="event-icon">
+                    🚀
+                </div>
+
+                <div>
+
+                    <h3>
+                        No registration yet
+                    </h3>
+
+                    <p>
+                        Explore hackathons and
+                        register for your first event.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="hackathons.html"
+                class="btn secondary"
+            >
+                Explore Hackathons
+            </a>
+
+        </div>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="panel dashboard-panel">
+
+            <span class="eyebrow">
+                QUICK ACTIONS
+            </span>
+
+            <h2>
+                Manage
+            </h2>
+
+
+            <div class="quick-actions">
+
+
+                <a href="team.html">
+
+                    <span>👥</span>
+
+                    <div>
+
+                        <b>
+                            My Team
+                        </b>
+
+                        <small>
+                            Manage team members
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+                <a href="submission.html">
+
+                    <span>📤</span>
+
+                    <div>
+
+                        <b>
+                            Submit Project
+                        </b>
+
+                        <small>
+                            Upload your project
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+                <a href="leaderboard.html">
+
+                    <span>🏆</span>
+
+                    <div>
+
+                        <b>
+                            Leaderboard
+                        </b>
+
+                        <small>
+                            View rankings
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROFILE -->
+
+    <section class="panel profile-panel">
+
+        <div>
+
+            <span class="eyebrow">
+                PROFILE
+            </span>
+
+            <h2>
+                Student Profile
+            </h2>
+
+        </div>
+
+
+        <div class="profile-info">
+
+
+            <div>
+
+                <small>
+                    Name
+                </small>
+
+                <b id="profileName">
+                    Student
+                </b>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    Email
+                </small>
+
+                <b id="profileEmail">
+                    Not available
+                </b>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    College
+                </small>
+
+                <b id="profileCollege">
+                    Not available
+                </b>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <b>
+        ⚡ HackArena
+    </b>
+
+    <span>
+        Student Hackathon Portal
+    </span>
+
+    <span>
+        © 2026 HackArena
+    </span>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

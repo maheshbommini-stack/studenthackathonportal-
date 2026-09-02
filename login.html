@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Login | HackArena</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head><body><nav class="navbar"><a href="index.html" class="brand">
+    ⚡ HackArena
+</a>
+
+<div class="navlinks">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="hackathons.html">
+        Hackathons
+    </a>
+
+    <a href="register.html"
+       class="nav-btn">
+        Register
+    </a>
+
+</div>
+
+<button class="menu"
+        onclick="toggleMenu()">
+    ☰
+</button>
+
+</nav><main class="auth-container"><div class="auth-card">
+
+    <div class="auth-icon">
+        🔐
+    </div>
+
+    <span class="eyebrow">
+        WELCOME BACK
+    </span>
+
+    <h1>
+        Login
+    </h1>
+
+    <p class="auth-subtitle">
+        Continue your hackathon journey.
+    </p>
+
+
+    <form onsubmit="loginUser(event)">
+
+        <label>
+
+            Email Address
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="student@example.com"
+                required
+            >
+
+        </label>
+
+
+        <label>
+
+            Password
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+                required
+            >
+
+        </label>
+
+
+        <button
+            type="submit"
+            class="btn primary auth-btn"
+        >
+            Login →
+        </button>
+
+    </form>
+
+
+    <p class="auth-footer">
+
+        Don't have an account?
+
+        <a href="register.html">
+            Create Account
+        </a>
+
+    </p>
+
+</div>
+
+</main><footer><b>⚡ HackArena</b>
+
+<span>
+    Student Hackathon Portal
+</span>
+
+<span>
+    © 2026 HackArena
+</span>
+
+</footer><script src="js/main.js"></script></body></html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Hackathon Details | HackArena</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            ⚡ HackArena
+        </a>
+
+
+        <div class="navlinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="hackathons.html"
+                class="active"
+            >
+                Hackathons
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a
+                href="login.html"
+                class="nav-btn"
+            >
+                Login
+            </a>
+
+        </div>
+
+
+        <button
+            class="menu"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </button>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <div class="page-title">
+
+            <span class="eyebrow">
+                HACKATHON DETAILS
+            </span>
+
+            <h1>
+                AI Innovation Challenge
+            </h1>
+
+            <p>
+                Build innovative AI solutions for real-world problems.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= DETAILS ================= -->
+
+        <section class="card">
+
+            <h2>
+                🤖 About the Hackathon
+            </h2>
+
+            <p>
+                The AI Innovation Challenge gives students
+                an opportunity to build creative solutions
+                using Artificial Intelligence.
+            </p>
+
+            <br>
+
+
+            <h3>
+                📅 Important Information
+            </h3>
+
+            <p>
+                <strong>Category:</strong>
+                Artificial Intelligence
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                20 September 2026
+            </p>
+
+            <p>
+                <strong>Prize:</strong>
+                50,000 Points
+            </p>
+
+            <p>
+                <strong>Team Size:</strong>
+                1 - 4 Members
+            </p>
+
+            <br>
+
+
+            <h3>
+                📝 Problem Statement
+            </h3>
+
+            <p>
+                Develop an innovative application that uses
+                Artificial Intelligence to solve a practical
+                real-world problem.
+            </p>
+
+            <br>
+
+
+            <h3>
+                💡 What You Can Build
+            </h3>
+
+            <ul>
+
+                <li>
+                    AI-powered applications
+                </li>
+
+                <li>
+                    Intelligent recommendation systems
+                </li>
+
+                <li>
+                    Natural language applications
+                </li>
+
+                <li>
+                    AI-based automation tools
+                </li>
+
+            </ul>
+
+
+            <br>
+
+
+            <button
+                class="btn primary-btn"
+                onclick="registerHackathonFromDetails()"
+            >
+                🚀 Register for Hackathon
+            </button>
+
+
+            <a
+                href="hackathons.html"
+                class="btn"
+            >
+                ← Back to Hackathons
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <b>
+            ⚡ HackArena
+        </b>
+
+        <span>
+            Student Hackathon Portal
+        </span>
+
+        <span>
+            © 2026 HackArena
+        </span>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/main.js"></script>
+    <script src="js/hackathons.js"></script>
+
+
+    <script>
+
+        function registerHackathonFromDetails() {
+
+            registerHackathon(
+                "AI Innovation Challenge",
+                "AI",
+                "20 September 2026"
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

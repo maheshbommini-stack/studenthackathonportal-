@@ -1,0 +1,331 @@
+/* =========================================
+   HACKARENA DASHBOARD
+========================================= */
+
+.dashboard-main {
+    padding-bottom: 40px;
+}
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome {
+    padding: 55px 0 30px;
+}
+
+.welcome h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #9ca8ba;
+}
+
+/* =========================================
+   DASHBOARD STATS
+========================================= */
+
+.stats-grid {
+    margin-bottom: 30px;
+}
+
+.dash-stat {
+    background: #111722;
+    border: 1px solid #293244;
+    border-radius: 14px;
+
+    padding: 24px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dash-stat:hover {
+    transform: translateY(-4px);
+    border-color: #3d495d;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.dash-stat h3 {
+    font-size: 1.9rem;
+    margin: 8px 0;
+}
+
+.dash-stat p {
+    color: #8f9bad;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   DASHBOARD PANELS
+========================================= */
+
+.dashboard-panel {
+    background: #111722;
+    border: 1px solid #293244;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.dashboard-panel h2 {
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   REGISTERED HACKATHON
+========================================= */
+
+.registered-hackathon {
+    background: #111722;
+    border: 1px solid #293244;
+    border-radius: 14px;
+
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.registered-hackathon h2 {
+    margin-bottom: 18px;
+}
+
+.registered-hackathon strong {
+    display: block;
+    font-size: 1.15rem;
+    margin-bottom: 7px;
+}
+
+.registered-hackathon p {
+    color: #9ca8ba;
+}
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.quick-actions a {
+    text-align: center;
+    text-decoration: none;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-card {
+    background: #111722;
+    border: 1px solid #293244;
+    border-radius: 14px;
+
+    padding: 28px;
+    margin-top: 30px;
+}
+
+.profile-card h2 {
+    margin-bottom: 18px;
+}
+
+.profile-card p {
+    margin: 10px 0;
+    color: #cbd5e1;
+}
+
+.profile-card strong {
+    color: #f1f5f9;
+}
+
+/* =========================================
+   DASHBOARD BUTTONS
+========================================= */
+
+.dashboard-btn {
+    display: inline-block;
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    background: #f1f5f9;
+    color: #080c14;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.dashboard-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+.admin-header {
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.admin-header p {
+    color: #9ca8ba;
+}
+
+.admin-section {
+    background: #111722;
+    border: 1px solid #293244;
+    border-radius: 14px;
+
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.admin-section h2 {
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   ADMIN FORM
+========================================= */
+
+.admin-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.admin-form .full {
+    grid-column: 1 / -1;
+}
+
+.admin-form button {
+    width: fit-content;
+}
+
+/* =========================================
+   ADMIN LIST
+========================================= */
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-list-item {
+    background: #0c111b;
+    border: 1px solid #293244;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.admin-list-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.admin-list-item span {
+    color: #8f9bad;
+}
+
+/* =========================================
+   ADMIN ACTIONS
+========================================= */
+
+.admin-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.admin-actions button {
+    width: 100%;
+}
+
+/* =========================================
+   ADMIN DANGER
+========================================= */
+
+.danger-btn {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
+.danger-btn:hover {
+    background: #dc2626 !important;
+}
+
+/* =========================================
+   DASHBOARD MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .welcome {
+        padding-top: 40px;
+    }
+
+    .welcome h1 {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dash-stat {
+        padding: 18px;
+    }
+
+    .dash-stat h3 {
+        font-size: 1.55rem;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form .full {
+        grid-column: auto;
+    }
+
+    .admin-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-panel,
+    .registered-hackathon,
+    .profile-card,
+    .admin-section {
+        padding: 20px;
+    }
+}

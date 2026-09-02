@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Submission | HackArena</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            ⚡ HackArena
+        </a>
+
+
+        <div class="navlinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="hackathons.html">
+                Hackathons
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+            <a
+                href="dashboard.html"
+                class="active"
+            >
+                Dashboard
+            </a>
+
+            <a
+                href="#"
+                class="nav-btn"
+                onclick="logoutUser()"
+            >
+                Logout
+            </a>
+
+        </div>
+
+
+        <button
+            class="menu"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </button>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <div class="page-title">
+
+            <span class="eyebrow">
+                PROJECT SUBMISSION
+            </span>
+
+            <h1>
+                Submit Your Project 🚀
+            </h1>
+
+            <p>
+                Submit your project details before the deadline.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= SUBMISSION FORM ================= -->
+
+        <section class="card">
+
+            <form
+                id="submissionForm"
+                onsubmit="submitProject(event)"
+            >
+
+
+                <label for="projectName">
+                    Project Name
+                </label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="Enter your project name"
+                    required
+                >
+
+
+                <label for="projectDescription">
+                    Project Description
+                </label>
+
+                <textarea
+                    id="projectDescription"
+                    rows="6"
+                    placeholder="Describe your project..."
+                    required
+                ></textarea>
+
+
+                <label for="techStack">
+                    Technologies Used
+                </label>
+
+                <input
+                    type="text"
+                    id="techStack"
+                    placeholder="Example: HTML, CSS, JavaScript"
+                    required
+                >
+
+
+                <label for="githubLink">
+                    GitHub Repository
+                </label>
+
+                <input
+                    type="url"
+                    id="githubLink"
+                    placeholder="https://github.com/username/project"
+                >
+
+
+                <label for="demoLink">
+                    Live Demo Link
+                </label>
+
+                <input
+                    type="url"
+                    id="demoLink"
+                    placeholder="https://example.com"
+                >
+
+
+                <br>
+
+
+                <button
+                    type="submit"
+                    class="btn primary-btn"
+                >
+                    🚀 Submit Project
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ================= SUBMISSION STATUS ================= -->
+
+        <section
+            class="card"
+            id="submissionStatus"
+            style="display:none;"
+        >
+
+            <h2>
+                ✅ Submission Received
+            </h2>
+
+            <p>
+                Your project has been successfully submitted.
+            </p>
+
+            <p>
+                <strong>Project:</strong>
+                <span id="submittedProjectName"></span>
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                Submitted
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <b>
+            ⚡ HackArena
+        </b>
+
+        <span>
+            Student Hackathon Portal
+        </span>
+
+        <span>
+            © 2026 HackArena
+        </span>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/main.js"></script>
+    <script src="js/submission.js"></script>
+
+
+</body>
+
+</html>

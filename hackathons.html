@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Hackathons | HackArena</title>
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+>
+
+<link
+    rel="stylesheet"
+    href="css/responsive.css"
+>
+
+</head><body><!-- ================= NAVBAR ================= --><nav class="navbar"><a
+    href="index.html"
+    class="brand"
+>
+    ⚡ HackArena
+</a>
+
+
+<div class="navlinks">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a
+        href="hackathons.html"
+        class="active"
+    >
+        Hackathons
+    </a>
+
+    <a href="leaderboard.html">
+        Leaderboard
+    </a>
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a
+        href="login.html"
+        class="nav-btn"
+    >
+        Login
+    </a>
+
+</div>
+
+
+<button
+    class="menu"
+    onclick="toggleMenu()"
+>
+    ☰
+</button>
+
+</nav><!-- ================= MAIN ================= --><main class="container"><!-- PAGE TITLE -->
+
+<div class="page-title">
+
+    <span class="eyebrow">
+        COMPETE & CREATE
+    </span>
+
+    <h1>
+        Explore Hackathons
+    </h1>
+
+    <p>
+        Find your next challenge, build a team
+        and turn your ideas into reality.
+    </p>
+
+</div>
+
+
+
+<!-- ================= FILTERS ================= -->
+
+<div class="filters">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Search hackathons..."
+        oninput="renderHackathons()"
+    >
+
+
+    <select
+        id="category"
+        onchange="renderHackathons()"
+    >
+
+        <option value="all">
+            All Categories
+        </option>
+
+        <option value="AI">
+            Artificial Intelligence
+        </option>
+
+        <option value="Web">
+            Web Development
+        </option>
+
+        <option value="Cybersecurity">
+            Cybersecurity
+        </option>
+
+        <option value="Cloud">
+            Cloud Computing
+        </option>
+
+        <option value="GreenTech">
+            GreenTech
+        </option>
+
+    </select>
+
+
+    <select
+        id="status"
+        onchange="renderHackathons()"
+    >
+
+        <option value="all">
+            All Status
+        </option>
+
+        <option value="Open">
+            Open
+        </option>
+
+        <option value="Upcoming">
+            Upcoming
+        </option>
+
+    </select>
+
+</div>
+
+
+
+<!-- ================= RESULTS ================= -->
+
+<div
+    class="grid"
+    id="hackathonGrid"
+>
+
+    <!-- JavaScript cards appear here -->
+
+</div>
+
+</main><!-- ================= FOOTER ================= --><footer><b>
+    ⚡ HackArena
+</b>
+
+<span>
+    Student Hackathon Portal
+</span>
+
+<span>
+    © 2026 HackArena
+</span>
+
+</footer><script src="js/main.js"></script><script src="js/hackathons.js"></script></body></html>

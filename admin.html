@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel | HackArena</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head><body><!-- ================= NAVBAR ================= --><nav class="navbar"><a href="index.html" class="brand">
+    ⚡ HackArena
+</a>
+
+<div class="navlinks">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="hackathons.html">
+        Hackathons
+    </a>
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="leaderboard.html">
+        Leaderboard
+    </a>
+
+    <a href="login.html"
+       class="nav-btn">
+        Logout
+    </a>
+
+</div>
+
+<button class="menu"
+        onclick="toggleMenu()">
+    ☰
+</button>
+
+</nav><!-- ================= MAIN ================= --><main class="dashboard-container"><!-- HEADER -->
+
+<section class="dashboard-welcome">
+
+    <div>
+
+        <span class="eyebrow">
+            ADMINISTRATION
+        </span>
+
+        <h1>
+            Admin Dashboard 🛠️
+        </h1>
+
+        <p>
+            Manage hackathons, teams and project
+            submissions from one place.
+        </p>
+
+    </div>
+
+    <div class="admin-badge">
+        ADMIN
+    </div>
+
+</section>
+
+
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="admin-stats">
+
+
+    <div class="panel admin-stat">
+
+        <span>
+            HACKATHONS
+        </span>
+
+        <strong id="adminHackathons">
+            4
+        </strong>
+
+    </div>
+
+
+    <div class="panel admin-stat">
+
+        <span>
+            STUDENTS
+        </span>
+
+        <strong id="adminStudents">
+            128
+        </strong>
+
+    </div>
+
+
+    <div class="panel admin-stat">
+
+        <span>
+            TEAMS
+        </span>
+
+        <strong id="adminTeams">
+            32
+        </strong>
+
+    </div>
+
+
+    <div class="panel admin-stat">
+
+        <span>
+            SUBMISSIONS
+        </span>
+
+        <strong id="adminSubmissions">
+            18
+        </strong>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ADMIN GRID ================= -->
+
+<section class="admin-grid">
+
+
+    <!-- ADD HACKATHON -->
+
+    <div class="panel admin-form">
+
+        <span class="eyebrow">
+            CREATE EVENT
+        </span>
+
+        <h2>
+            Add Hackathon
+        </h2>
+
+        <form onsubmit="addHackathon(event)">
+
+            <label>
+
+                Hackathon Name
+
+                <input
+                    type="text"
+                    id="adminHackathonName"
+                    placeholder="e.g. TechSprint 2026"
+                    required
+                >
+
+            </label>
+
+
+            <label>
+
+                Organizer
+
+                <input
+                    type="text"
+                    id="adminOrganizer"
+                    placeholder="Organizer name"
+                    required
+                >
+
+            </label>
+
+
+            <label>
+
+                Date
+
+                <input
+                    type="date"
+                    id="adminDate"
+                    required
+                >
+
+            </label>
+
+
+            <label>
+
+                Category
+
+                <select id="adminCategory">
+
+                    <option>
+                        AI
+                    </option>
+
+                    <option>
+                        Web
+                    </option>
+
+                    <option>
+                        Cloud
+                    </option>
+
+                    <option>
+                        Cybersecurity
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <button
+                type="submit"
+                class="btn primary"
+            >
+                + Add Hackathon
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- QUICK ACTIONS -->
+
+    <div class="panel">
+
+        <span class="eyebrow">
+            QUICK ACTIONS
+        </span>
+
+        <h2>
+            Management
+        </h2>
+
+
+        <div class="admin-actions">
+
+            <button
+                onclick="scrollToSubmissions()"
+                class="admin-action"
+            >
+                📤
+                <span>
+                    View Submissions
+                </span>
+            </button>
+
+
+            <button
+                onclick="scrollToTeams()"
+                class="admin-action"
+            >
+                👥
+                <span>
+                    View Teams
+                </span>
+            </button>
+
+
+            <button
+                onclick="resetPortal()"
+                class="admin-action danger"
+            >
+                ⚠️
+                <span>
+                    Reset Demo Data
+                </span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HACKATHONS ================= -->
+
+<section class="panel admin-section">
+
+    <div class="admin-section-header">
+
+        <div>
+
+            <span class="eyebrow">
+                EVENTS
+            </span>
+
+            <h2>
+                Hackathons
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="adminHackathonList"
+        class="admin-list"
+    >
+    </div>
+
+</section>
+
+
+
+<!-- ================= SUBMISSIONS ================= -->
+
+<section
+    id="submissionsSection"
+    class="panel admin-section"
+>
+
+    <div class="admin-section-header">
+
+        <div>
+
+            <span class="eyebrow">
+                PROJECTS
+            </span>
+
+            <h2>
+                Recent Submissions
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="adminSubmissionList"
+        class="admin-list"
+    >
+    </div>
+
+</section>
+
+
+
+<!-- ================= TEAM ================= -->
+
+<section
+    id="teamsSection"
+    class="panel admin-section"
+>
+
+    <div class="admin-section-header">
+
+        <div>
+
+            <span class="eyebrow">
+                COLLABORATION
+            </span>
+
+            <h2>
+                Current Team
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="adminTeamList"
+        class="admin-list"
+    >
+    </div>
+
+</section>
+
+</main><!-- ================= FOOTER ================= --><footer><b>
+    ⚡ HackArena
+</b>
+
+<span>
+    Admin Management System
+</span>
+
+<span>
+    © 2026 HackArena
+</span>
+
+</footer><script src="js/main.js"></script><script src="js/dashboard.js"></script></body></html>

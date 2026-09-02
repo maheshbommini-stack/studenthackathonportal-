@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Leaderboard | HackArena</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            ⚡ HackArena
+        </a>
+
+
+        <div class="navlinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="hackathons.html">
+                Hackathons
+            </a>
+
+            <a
+                href="leaderboard.html"
+                class="active"
+            >
+                Leaderboard
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a
+                href="login.html"
+                class="nav-btn"
+            >
+                Login
+            </a>
+
+        </div>
+
+
+        <button
+            class="menu"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </button>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <div class="page-title">
+
+            <span class="eyebrow">
+                TOP PERFORMERS
+            </span>
+
+            <h1>
+                Leaderboard 🏆
+            </h1>
+
+            <p>
+                See how you rank against other HackArena participants.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= LEADERBOARD ================= -->
+
+        <section class="card leaderboard-card">
+
+            <div class="leaderboard-header">
+
+                <span>
+                    Rank
+                </span>
+
+                <span>
+                    Participant
+                </span>
+
+                <span>
+                    College
+                </span>
+
+                <span>
+                    Points
+                </span>
+
+            </div>
+
+
+            <div id="leaderboardList">
+
+                <!-- JavaScript will add rows -->
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <b>
+            ⚡ HackArena
+        </b>
+
+        <span>
+            Student Hackathon Portal
+        </span>
+
+        <span>
+            © 2026 HackArena
+        </span>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/main.js"></script>
+
+
+    <script>
+
+        /* =========================================
+           LEADERBOARD DATA
+        ========================================= */
+
+        const leaderboardData = [
+
+            {
+                name: "Arun Kumar",
+                college: "ABC Engineering College",
+                points: 980
+            },
+
+            {
+                name: "Priya Sharma",
+                college: "XYZ Institute of Technology",
+                points: 920
+            },
+
+            {
+                name: "Rahul Raj",
+                college: "National Engineering College",
+                points: 875
+            },
+
+            {
+                name: "Student",
+                college: "HackArena",
+                points: 850
+            },
+
+            {
+                name: "Karthik S",
+                college: "Tech Engineering College",
+                points: 790
+            },
+
+            {
+                name: "Divya M",
+                college: "Future Institute",
+                points: 740
+            }
+
+        ];
+
+
+
+        /* =========================================
+           DISPLAY LEADERBOARD
+        ========================================= */
+
+        function loadLeaderboard() {
+
+            const container =
+                document.getElementById(
+                    "leaderboardList"
+                );
+
+
+            if (!container) {
+
+                return;
+
+            }
+
+
+            const savedUser =
+                localStorage.getItem(
+                    "hackArenaUser"
+                );
+
+
+            let currentUser =
+                null;
+
+
+            if (savedUser) {
+
+                try {
+
+                    currentUser =
+                        JSON.parse(
+                            savedUser
+                        );
+
+                }
+
+                catch (error) {
+
+                    console.log(
+                        "User data error."
+                    );
+
+                }
+
+            }
+
+
+            let data =
+                [...leaderboardData];
+
+
+            /* ADD REGISTERED USER */
+
+            if (currentUser) {
+
+                const alreadyExists =
+                    data.some(
+                        function (student) {
+
+                            return (
+                                student.name ===
+                                currentUser.name
+                            );
+
+                        }
+                    );
+
+
+                if (!alreadyExists) {
+
+                    data.push({
+
+                        name:
+                            currentUser.name,
+
+                        college:
+                            currentUser.college,
+
+                        points:
+                            0
+
+                    });
+
+                }
+
+            }
+
+
+            /* SORT BY POINTS */
+
+            data.sort(
+                function (a, b) {
+
+                    return b.points - a.points;
+
+                }
+            );
+
+
+            container.innerHTML = "";
+
+
+            /* CREATE ROWS */
+
+            data.forEach(
+                function (student, index) {
+
+                    const row =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    row.className =
+                        "leaderboard-row";
+
+
+                    row.innerHTML = `
+
+                        <span class="rank">
+                            #${index + 1}
+                        </span>
+
+                        <span>
+                            👤
+                            ${student.name}
+                        </span>
+
+                        <span>
+                            ${student.college}
+                        </span>
+
+                        <strong>
+                            ${student.points}
+                        </strong>
+
+                    `;
+
+
+                    container.appendChild(
+                        row
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================
+           LOAD
+        ========================================= */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                loadLeaderboard();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
